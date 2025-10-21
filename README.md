@@ -1,28 +1,28 @@
 ## HTML
-<!DOCTYPE html> <!-- Define que o documento é HTML5 -->
-<html lang="pt-BR"> <!-- Início do documento HTML e define o idioma como português -->
-<head> <!-- Cabeçalho com configurações da página -->
-  <meta charset="UTF-8" /> <!-- Define o conjunto de caracteres para suportar acentos -->
-  <title>Jogo do Quadrado</title> <!-- Título que aparece na aba do navegador -->
-  <link rel="stylesheet" href="style.css"> <!-- Importa o arquivo CSS -->
-</head>
-<body> <!-- Início do corpo da página (parte visível) -->
-<h1>Jogo do Quadrado 🟦</h1> <!-- Título principal -->
-
-  <p>Pontuação: <span id="score">0</span></p> <!-- Exibe a pontuação atual dentro do span -->
-
-  <p>Tempo: <span id="time">30</span>s</p> <!-- Exibe o tempo restante -->
-
-  <div id="game-area"> <!-- Área onde o quadrado se moverá -->
-    <div id="square"></div> <!-- Quadrado azul que será clicado -->
-  </div>
-
-  <button id="start-btn">Iniciar Jogo</button> <!-- Botão para iniciar o jogo -->
-
-  <script src="script.js"></script> <!-- Importa o código JavaScript -->
-</body>
-</html> <!-- Fim do documento -->
-
+-<!DOCTYPE html> <!-- Define que o documento é HTML5 -->
+-<html lang="pt-BR"> <!-- Início do documento HTML e define o idioma como português -->
+-<head> <!-- Cabeçalho com configurações da página -->
+-  <meta charset="UTF-8" /> <!-- Define o conjunto de caracteres para suportar acentos -->
+-  <title>Jogo do Quadrado</title> <!-- Título que aparece na aba do navegador -->
+-  <link rel="stylesheet" href="style.css"> <!-- Importa o arquivo CSS -->
+-</head>
+-<body> <!-- Início do corpo da página (parte visível) -->
+-<h1>Jogo do Quadrado 🟦</h1> <!-- Título principal -->
+-
+-  <p>Pontuação: <span id="score">0</span></p> <!-- Exibe a pontuação atual dentro do span -->
+-
+-  <p>Tempo: <span id="time">30</span>s</p> <!-- Exibe o tempo restante -->
+-
+-  <div id="game-area"> <!-- Área onde o quadrado se moverá -->
+-    <div id="square"></div> <!-- Quadrado azul que será clicado -->
+-  </div>
+-
+-  <button id="start-btn">Iniciar Jogo</button> <!-- Botão para iniciar o jogo -->
+-
+-  <script src="script.js"></script> <!-- Importa o código JavaScript -->
+-</body>
+-</html> <!-- Fim do documento -->
+-
 ## CSS
 body { /* Estilo geral da página */
   text-align: center; /* Centraliza o texto */
