@@ -1,76 +1,72 @@
 ## CSS
-body { /* Estilo geral da página */
-  text-align: center; /* Centraliza o texto */
-  font-family: Arial, sans-serif; /* Define a fonte */
-  background: #f0f0f0; /* Fundo cinza claro */
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
 }
-#game-area { /* Área do jogo */
-  width: 300px; /* Largura da área */
-  height: 300px; /* Altura da área */
-  border: 2px solid #333; /* Borda preta */
-  margin: 20px auto; /* Centraliza horizontalmente e dá espaço em cima */
-  position: relative; /* Necessário para posicionar o quadrado dentro */
-  background: white; /* Fundo branco */
+#game-area {
+  width: 300px;
+  height: 300px;
+  border: 2px solid #333;
+  margin: 20px auto;
+  position: relative;
+  background: white;
 }
-#square { /* Quadrado azul clicável */
-  width: 50px; /* Largura */
-  height: 50px; /* Altura */
-  background: blue; /* Cor de fundo azul */
-  position: absolute; /* Permite mover com left e top */
-  top: 0; /* Começa no topo */
-  left: 0; /* Começa na esquerda */
-  cursor: pointer; /* Muda o cursor para “mãozinha” */
+#square {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
 }
-button { /* Estilo do botão */
-  padding: 10px 20px; /* Espaçamento interno */
-  font-size: 16px; /* Tamanho da fonte */
-  cursor: pointer; /* Mãozinha ao passar por cima */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 ## JavaScript
-const square = document.getElementById('square'); // Pega o elemento do quadrado pelo ID
-const scoreDisplay = document.getElementById('score'); // Pega o elemento que mostra a pontuação
-const timeDisplay = document.getElementById('time'); // Pega o elemento que mostra o tempo
-const startBtn = document.getElementById('start-btn'); // Pega o botão de iniciar
-let score = 0; // Pontuação inicial
-let time = 30; // Tempo inicial (30 segundos)
-let gameInterval, timerInterval; // Variáveis para guardar os intervalos (movimento e cronômetro)
-function moveSquare() { // Função para mover o quadrado aleatoriamente
-  const area = document.getElementById('game-area'); // Pega a área do jogo
-  const maxX = area.clientWidth - square.clientWidth; // Calcula o limite máximo no eixo X
-  const maxY = area.clientHeight - square.clientHeight; // Calcula o limite máximo no eixo Y
-  const x = Math.floor(Math.random() * maxX); // Gera posição X aleatória
-  const y = Math.floor(Math.random() * maxY); // Gera posição Y aleatória
-  square.style.left = x + 'px'; // Atualiza a posição horizontal
-  square.style.top = y + 'px'; // Atualiza a posição vertical
+const square = document.getElementById('square');
+const scoreDisplay = document.getElementById('score');
+const timeDisplay = document.getElementById('time');
+const startBtn = document.getElementById('start-btn');
+let score = 0;
+let time = 30;
+let gameInterval, timerInterval;
+function moveSquare() {
+  const area = document.getElementById('game-area');
+  const maxX = area.clientWidth - square.clientWidth;
+  const maxY = area.clientHeight - square.clientHeight;
+  const x = Math.floor(Math.random() * maxX);
+  const y = Math.floor(Math.random() * maxY);
+  square.style.left = x + 'px';
+  square.style.top = y + 'px';
 }
-square.addEventListener('click', () => { // Quando o quadrado for clicado
-  if (time > 0) { // Verifica se o tempo ainda não acabou
-    score++; // Aumenta a pontuação
-    scoreDisplay.textContent = score; // Atualiza o placar na tela
-    moveSquare(); // Move o quadrado para outra posição
+square.addEventListener('click', () => {
+  if (time > 0) {
+    score++;
+    scoreDisplay.textContent = score;
+    moveSquare();
   }
 });
-startBtn.addEventListener('click', () => { // Quando clicar no botão de iniciar
-  score = 0; // Reseta a pontuação
-  time = 30; // Reseta o tempo
-  scoreDisplay.textContent = score; // Atualiza placar para 0
-  timeDisplay.textContent = time; // Atualiza o cronômetro para 30
+startBtn.addEventListener('click', () => {
+  score = 0;
+  time = 30;
+  scoreDisplay.textContent = score;
+  timeDisplay.textContent = time;
 
-  gameInterval = setInterval(moveSquare, 800); // Move o quadrado a cada 800ms automaticamente
+  gameInterval = setInterval(moveSquare, 800);
 
-  timerInterval = setInterval(() => { // Inicia o cronômetro
-    time--; // Diminui 1 segundo
-    timeDisplay.textContent = time; // Atualiza o tempo na tela
-    if (time <= 0) { // Se o tempo acabou
-      clearInterval(gameInterval); // Para o movimento do quadrado
-      clearInterval(timerInterval); // Para o cronômetro
-      alert('Fim de jogo! Pontuação final: ' + score); // Mostra alerta com a pontuação final
+  timerInterval = setInterval(() => {
+    time--;
+    timeDisplay.textContent = time;
+    if (time <= 0) {
+      clearInterval(gameInterval);
+      clearInterval(timerInterval);
+      alert('Fim de jogo! Pontuação final: ' + score);
     }
-  }, 1000); // Intervalo de 1 segundo
+  }, 1000);
 });
-
-
-
-
 
