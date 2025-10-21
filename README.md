@@ -1,5 +1,5 @@
 ## HTML
-<img width="1838" height="438" alt="image" src="https://github.com/user-attachments/assets/e0f481aa-6935-4caf-a24f-11814d851f47" /><!DOCTYPE html> <!-- Define que o documento é HTML5 -->
+<!DOCTYPE html> <!-- Define que o documento é HTML5 -->
 <html lang="pt-BR"> <!-- Início do documento HTML e define o idioma como português -->
 <head> <!-- Cabeçalho com configurações da página -->
   <meta charset="UTF-8" /> <!-- Define o conjunto de caracteres para suportar acentos -->
